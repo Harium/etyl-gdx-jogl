@@ -2,6 +2,7 @@ package com.harium.etyl;
 
 import com.badlogic.gdx.backends.jogamp.JoglAwtApplication;
 import com.badlogic.gdx.backends.jogamp.JoglAwtApplicationConfiguration;
+import com.harium.etyl.commons.module.Module;
 import com.harium.etyl.core.GDXCore;
 import com.harium.etyl.gdx.GDXWindow;
 import com.harium.etyl.loader.Loader;
@@ -89,5 +90,9 @@ public abstract class BaseEngine<T extends GDXCore> {
 
     public void addLoader(Loader loader) {
         loaders.add(loader);
+    }
+
+    public void addModule(Module module) {
+        core.addModule(module);
     }
 }
