@@ -1,22 +1,30 @@
 package com.harium.etyl;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.backends.jogamp.JoglAwtApplicationConfiguration;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class BaseEngineTest {
 
     private static final int WIDTH = 640;
     private static final int HEIGHT = 480;
 
+    @Before
+    public void setUp() {
+        Gdx.app = mock(Application.class);
+        when(Gdx.app.getType()).thenReturn(Application.ApplicationType.Desktop);
+    }
+
     @Test
     public void testInit() {
-        BaseEngine engine = new BaseEngine(640, 480) {
-        };
-
-        Assert.assertEquals(WIDTH, engine.w);
-        Assert.assertEquals(HEIGHT, engine.h);
-        Assert.assertNotNull(engine.core);
-        Assert.assertNotNull(engine.loaders);
+        JoglAwtApplicationConfiguration configuration = new JoglAwtApplicationConfiguration();
+        Assert.assertNotNull(configuration);
     }
 
 }
