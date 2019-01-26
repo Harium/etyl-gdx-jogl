@@ -8,6 +8,6 @@ This backend uses AWT as environment. NEWT and Swing are also possible with few 
 <dependency>
     <groupId>com.harium.etyl</groupId>
     <artifactId>etyl-gdx-jogl</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
